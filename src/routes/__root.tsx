@@ -72,11 +72,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Mira Voss — Atelier de Moda Autoral" },
+      { name: "description", content: "Atelier de moda autoral entre o clássico e o contemporâneo. Coleções de alfaiataria, vestidos, casual, outerwear e peças sob medida." },
+      { name: "author", content: "Mira Voss" },
+      { property: "og:title", content: "Mira Voss — Atelier de Moda Autoral" },
+      { property: "og:description", content: "Coleções atemporais e peças sob encomenda." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -108,12 +108,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { Layout } from "../components/Layout";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <Layout />
     </QueryClientProvider>
   );
 }
